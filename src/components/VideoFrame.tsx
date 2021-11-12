@@ -1,18 +1,15 @@
 import React from "react";
-
+import styles from "./VideoFrame.module.css";
 
 export function VideoFrame1(props: any) {
     console.log(props);
     
     return (
-      <div>
-        <video className="video" controls>
-          <source
-            src={props.url}
-            type="video/mp4"
-          />
+      <main className={styles.main}>
+        <video className={styles.video} controls>
+          <source src={props.url} type="video/mp4" />
         </video>
-      </div>
+      </main>
     );
 }
 

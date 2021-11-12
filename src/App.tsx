@@ -1,4 +1,4 @@
-import { useState, useEffect, memo } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { Screens, PlayerElements } from "./screens.model";
 import Player from "./components/Player";
@@ -63,7 +63,7 @@ function App() {
   };
 
   return (
-    <div className="container">hola
+    <div className="container">
       <Player
         screens={screens}
         brandDetailsHandler={brandDetailsHandler}

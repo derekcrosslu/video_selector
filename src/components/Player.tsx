@@ -1,5 +1,6 @@
 import React from "react";
 import { VideoFrame1 } from "./VideoFrame";
+import styles from "./Player.module.css";
 
 
 function Player(props: any) {
@@ -18,7 +19,15 @@ function Player(props: any) {
   // console.log(props.PlayerElements, Object.keys(props.PlayerElements).length);
 
   return (
-    <div className="main">
+       <div className={styles.container}>
+      <main className={styles.main}>
+        <h1 className={styles.title}>Video Player</h1>
+
+        <p className={styles.description}>
+          <code className={styles.code}>
+            Select thumbnails below to play video
+          </code>
+        </p>
       <div>
         <VideoFrame video={props.PlayerElements} />
       </div>
@@ -35,6 +44,7 @@ function Player(props: any) {
           );
         })}
       </button>
+      </main >
     </div>
   );
 }
