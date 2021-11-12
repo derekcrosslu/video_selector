@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { Screens } from "./screens.model";
 import response from "./response";
+import Player from './components/Player'
 
 function App() {
   const [screens, setScreens] = useState<Screens>({
@@ -46,7 +47,12 @@ function App() {
     });
     console.log(PlayerElements);
   };
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      {" "}
+      <button onClick={() => brandDetailsHandler("sintel")}>SetPlayer</button>
+    </div>
+  );
 }
 
 export default App;
