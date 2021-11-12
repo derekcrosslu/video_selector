@@ -2,8 +2,6 @@ import React from "react";
 import styles from "./VideoFrame.module.css";
 
 export function VideoFrame1(props: any) {
-    // console.log(props);
-    
     return (
       <main className={styles.main}>
         <video className={styles.video} controls>

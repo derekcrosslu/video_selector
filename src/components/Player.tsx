@@ -3,10 +3,9 @@ import { VideoFrame1 } from "./VideoFrame";
 import styles from "./Player.module.css";
 
 function Player(props: any) {
-   console.log(props);
+  console.log(props);
 
   const VideoFrame = (props: any) => {
-    // console.log(props);
 
     if (props.video.video_id === "sintel")
       return <VideoFrame1 url={props.video.video_file_url} />;
@@ -38,13 +37,18 @@ function Player(props: any) {
           >
             {props.screens.Selector.map((view: any, index: any) => {
               return (
-                <img
-                  src={view.thumbnail}
-                  alt={view.description}
-                  key={index}
-                  id={view.id}
-                  className={styles.thumbnail}
-                />
+                <div>
+                  <img
+                    src={view.thumbnail}
+                    alt={view.description}
+                    key={index}
+                    id={view.id}
+                    className={styles.thumbnail}
+                  />
+                  <div className={styles.duration}>
+                    <h3>{view.info} min</h3>
+                  </div>
+                </div>
               );
             })}
           </button>

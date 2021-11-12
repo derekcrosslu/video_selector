@@ -4,6 +4,14 @@
   display: flex;
   justify-content: center;
 }
+.duration {
+  background-color: black;
+  width: 100%;
+}
+.duration h3 {
+    color:white;
+    font-size: 1rem;
+}
 
 .main {
   /* min-height: 10vh; */
@@ -89,6 +97,8 @@
     flex-direction: column;
     align-items: flex-start;
     max-height: 100%;
+    /* for some reason this starts scrolling under video and first thumbnail is half visible  */
+    /* running out of time so I will leave block to fit max which will cancel scrolling.. */
     overflow: scroll;
     margin-top: 20px;
   }
@@ -97,23 +107,22 @@
     /* max-height: 250px; */
     background-color: black;
     align-items: flex-start;
-    display:flex;
-    
+    display: flex;
   }
   .description {
-  margin: 1rem 0;
-  line-height: 1.7;
-  font-size: 1rem;
-}
+    margin: 1rem 0;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
 
-.text {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.55rem;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
- 
-}
+  .text {
+    background: #fafafa;
+    border-radius: 5px;
+    padding: 0.55rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+
 }

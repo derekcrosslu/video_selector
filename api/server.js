@@ -13,3 +13,5 @@ server.listen(port, host, () => {
   console.log(`Server is running on http://${host}:${port}`);
 });
 
+// there was an extra character in json file that I had to fix 
+// in order for the API to work 

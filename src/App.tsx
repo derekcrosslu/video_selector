@@ -24,21 +24,17 @@ function App() {
     });
   };
   useEffect(() => {
-    // screenFilterHandler(response);
     axios
       .get("http://localhost:9000")
       .then((res) => {
-        // console.log(res.data.screens[1].config.views[1].files[0].url);
         screenFilterHandler(res.data);
       })
       .catch((err) => console.error(err));
   }, []);
   const [PlayerElements, SetPlayerElements] = useState({});
-  console.log(VideoId, screens);
 
   const videoIdHandler = (ev: any) => {
     SetVideoId(ev.id);
-    // brandDetailsHandler();
   };
 
   const selectedVideo = screens.BrandWrapper.filter(
