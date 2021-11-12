@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import { Screens } from "./screens.model";
-import response from "./response";
 import Player from './components/Player'
+import axios from 'axios'
 
 function App() {
   const [screens, setScreens] = useState<Screens>({
@@ -25,7 +25,13 @@ function App() {
     });
   };
   useEffect(() => {
-    screenFilterHandler(response);
+    axios
+      .get("http://localhost:9000")
+      .then((res) => {
+        // console.log(res.data.screens[1].config.views[1].files[0].url);
+        screenFilterHandler(res.data);
+      })
+      .catch((err) => console.error(err));
   }, []);
 
   const brandDetailsHandler = (id: string) => {
