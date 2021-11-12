@@ -26,6 +26,7 @@ npm install
 npm start
 
 # Video Player should open on  http://localhost:3000
+# You can follow my commit messages, they should match the sequence of the assesment steps given
 
 
 Thanks! =)
