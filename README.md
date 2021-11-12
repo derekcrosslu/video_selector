@@ -9,19 +9,15 @@ cd video_selector
 
 cd api
 
-npm install
-
 npm start
 
 # api will run on port 9000
-
-
 
 # run frontend development 
 
 cd ..
 
-npm install 
+yarn
 
 npm start
 
