@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { Screens, PlayerElements } from "./screens.model";
 import Player from "./components/Player";
-import response from './response'
 import axios from "axios";
 
 function App() {
@@ -10,8 +9,7 @@ function App() {
     Selector: [],
     BrandWrapper: [],
   });
-
-  const [PlayerElements, SetPlayerElements] = useState({});
+  const [VideoId, SetVideoId] = useState("bbb");
 
   const screenFilterHandler = (ApiResponse: any) => {
     const Selector = ApiResponse.screens.filter(
@@ -35,39 +33,44 @@ function App() {
       })
       .catch((err) => console.error(err));
   }, []);
+  const [PlayerElements, SetPlayerElements] = useState({});
+  console.log(VideoId, screens);
 
-  const brandDetailsHandler = (ev: any) => {
-
-    // console.log(ev);
-    
-    const selectedVideo = screens.BrandWrapper.filter(
-      (video) => video.id === ev.id
-    )[0];
-    const selectedView = screens.Selector.filter((view) => view.id === ev.id)[0];
-    // console.log(selectedView, selectedVideo);
-
-      SetPlayerElements({
-        header_image_base_url: selectedVideo && selectedVideo.config.assetPath,
-        header_image_url: selectedVideo && selectedVideo.config.views[0].url,
-        video_title: selectedView && selectedView.title,
-        video_description: selectedView && selectedView.description,
-        video_duration: selectedView && selectedView.info,
-        video_thumbail: selectedView && selectedView.thumbnail,
-        video_file_url:
-          selectedVideo &&
-          selectedVideo.config.views.filter(
-            (view) => view.type === "smPlayerIframe"
-          )[0].files[0].url,
-        video_id: selectedVideo.id,
-      });
+  const videoIdHandler = (ev: any) => {
+    SetVideoId(ev.id);
+    // brandDetailsHandler();
   };
+
+  const selectedVideo = screens.BrandWrapper.filter(
+    (video) => video.id === VideoId
+  )[0];
+  const selectedView = screens.Selector.filter(
+    (view) => view.id === VideoId
+  )[0];
+
+  useEffect(() => {
+    SetPlayerElements({
+      header_image_url: selectedVideo && selectedVideo.config.views[0].url,
+      video_title: selectedView && selectedView.title,
+      video_description: selectedView && selectedView.description,
+      video_duration: selectedView && selectedView.info,
+      video_thumbnail: selectedView && selectedView.thumbnail,
+      video_file_url:
+        selectedVideo &&
+        selectedVideo.config.views.filter(
+          (view) => view.type === "smPlayerIframe"
+        )[0].files[0].url,
+      video_id: VideoId,
+    });
+  }, [selectedVideo]);
 
   return (
     <div className="container">
       <Player
         screens={screens}
-        brandDetailsHandler={brandDetailsHandler}
         PlayerElements={PlayerElements}
+        videoIdHandler={videoIdHandler}
+        VideoId={VideoId}
       />
     </div>
   );

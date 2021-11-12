@@ -6,20 +6,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #eaeaea;
+  border: 1px solid black;
   border-radius: 10px;
-  background-color: white;
+  background-color: black;
   height: 400px;
 }
 .video {
-  min-height: 1vh;
-  padding: 1rem 0;
+  min-height: 0vh;
+  padding: 0rem 0;
   flex: 1;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
-  width: 800px;
-  height: 400px;
-  background-color: white;
+  max-width: 795px;
+  height: fit-content;
+  background-color: black;
 }
