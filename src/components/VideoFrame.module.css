@@ -16,10 +16,19 @@
   padding: 0rem 0;
   flex: 1;
   display: flex;
+  flex-grow: 1;
   /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   max-width: 795px;
   height: fit-content;
   background-color: black;
+}
+@media (max-width: 600px) {
+  .video {
+    max-width: 400px;
+  }
+  .main {
+    background-color: white;
+  }
 }
