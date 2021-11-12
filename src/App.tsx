@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import { Screens, PlayerElements } from "./screens.model";
+import { Screens } from "./screens.model";
 import Player from "./components/Player";
 import axios from "axios";
 
@@ -67,6 +67,7 @@ function App() {
         PlayerElements={PlayerElements}
         videoIdHandler={videoIdHandler}
         VideoId={VideoId}
+        data-testid="video-player"
       />
     </div>
   );
