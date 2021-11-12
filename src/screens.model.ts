@@ -40,5 +40,6 @@ export interface PlayerElements {
   video_description: string;
   video_duration: string;
   video_thumbnail: string;
-  video_file_url: string;
+    video_file_url: string;
+    video_id: string;
 }
