@@ -10,7 +10,9 @@ function App() {
     BrandWrapper: [],
   });
   const [VideoId, SetVideoId] = useState("bbb");
-
+// Separating informative or Selector data and resource files (mp4 and png) or Branding data
+  // before saving it to state after receiving it from the api
+  // look into the interface for model criteria
   const screenFilterHandler = (ApiResponse: any) => {
     const Selector = ApiResponse.screens.filter(
       (screen: any) => screen.type === "Selector"
@@ -32,18 +34,18 @@ function App() {
       .catch((err) => console.error(err));
   }, []);
   const [PlayerElements, SetPlayerElements] = useState({});
-
+  // saving brand id or "video id"
   const videoIdHandler = (ev: any) => {
     SetVideoId(ev.id);
   };
-
+  //filtering data related to thumbnail selected
   const selectedVideo = screens.BrandWrapper.filter(
     (video) => video.id === VideoId
   )[0];
   const selectedView = screens.Selector.filter(
     (view) => view.id === VideoId
   )[0];
-
+ // saving elements selected by clicking the thumbnail to render video player 
   useEffect(() => {
     SetPlayerElements({
       header_image_url: selectedVideo && selectedVideo.config.views[0].url,
