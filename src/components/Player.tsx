@@ -4,7 +4,8 @@ import styles from "./Player.module.css";
 import Selector from "./Selector"
 
 function Player(props: any) {
-
+ // dirty functional component for selecting video...its actually faster than pulling it from state
+  // I can think of a better strategy for sure but this was the quickest for now
   const VideoFrameSelector = (props: any) => {
 
     if (props.video.video_id === "sintel")
@@ -15,7 +16,7 @@ function Player(props: any) {
       return <VideoFrame url={props.video.video_file_url} />;
     else return <VideoFrame url={props.video.video_file_url} />;
   };
-
+  //little snippets to generate component key
 function uuid() {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
     var r = (Math.random() * 16) | 0,
@@ -23,7 +24,8 @@ function uuid() {
     return v.toString(16);
   });
 }
-
+  // I created a component Selector to grouping and testing the thumbnail selector code but decided
+  // to put it back into the player component for complications with app state
   return (
     <div className={styles.container}>
       <main className={styles.main}>
