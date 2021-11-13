@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./Player.module.css";
-
+//disregard this component, this same code appears in player component
 function Selector(props:any) {
     return (
         <div>
