@@ -1,3 +1,14 @@
+body {
+  margin: 20;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  
+}
+
 .container {
   /* padding: 0 1rem; */
   background-color: white;
@@ -18,7 +29,7 @@
 
 .main {
   /* min-height: 10vh; */
-  padding: 1rem 0;
+  padding: 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -79,7 +90,7 @@
 @media (max-width: 600px) {
   .main {
     /* min-height: 10vh; */
-    padding: 5rem 0;
+    padding: 4rem 0;
     /* flex: 1; */
     display: flex;
     flex-direction: column;
@@ -95,9 +106,11 @@
     background-color: rgb(177, 14, 14);
   }
   .selectorContainer {
-    width: 25rem;
+    width: 21.3rem;
+    padding-left: 4rem;
     height: fit-content;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     max-height: 100%;
     /* for some reason this starts scrolling under video and first thumbnail is half visible  */
@@ -110,10 +123,11 @@
     /* min-block-size: 265px; */
     /* max-height: 250px; */
     background-color: black;
-    
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
   .description {
     margin: 1rem 0;
@@ -122,6 +136,7 @@
   }
 
   .text {
+     
     background: #fafafa;
     border-radius: 5px;
     padding: 0.55rem;
@@ -130,4 +145,20 @@
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
+  .duration {
+   margin-right: 10rem;;
+  background-color: black;
+  width: 100%;
+  
+}
+.duration h3 {
+  color: white;
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  text-align: center;
+  justify-content: center;
+  margin-right: 4rem;
+}
 }
