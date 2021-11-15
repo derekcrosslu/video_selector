@@ -1,7 +1,7 @@
 ###### This is Extra Bonus part of the assignment presented after the Friday deadline #######
 ```#Cleaned out create-react-app related files and setup Webpack config 
 ##refactor and fixed minor bugs 
-##Jest would not render custom player
+##Jest would not render custom player, please refer to main branch for testing demo
 
 ###### Switching branches and installing new packages #######################################
 git checkout extrabonus
