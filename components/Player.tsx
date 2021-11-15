@@ -48,8 +48,12 @@ function uuid() {
             const player_key = uuid();
             return (
               <div key={player_key}>
-                // fix linking bug: moved button wrapper to avoid covering the minutes
-                <button onClick={(e) => props.videoIdHandler(e.target)}>
+                // fix linking bug: moved button wrapper to avoid covering the
+                minutes
+                <button
+                  onClick={(e) => props.videoIdHandler(e.target)}
+                  className={styles.thumbnail}
+                >
                   <img
                     src={view.thumbnail}
                     alt={view.description}

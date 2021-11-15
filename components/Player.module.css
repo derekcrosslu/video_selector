@@ -58,6 +58,7 @@ body {
   /* min-block-size: 265px; */
   max-height: 250px;
   background-color: black;
+  border: 0;
 }
 
 .title {
@@ -118,16 +119,18 @@ body {
     overflow: scroll;
     margin-top: 20px;
     border-radius: 10px;
+    background-color: black;
   }
   .thumbnail {
     /* min-block-size: 265px; */
     /* max-height: 250px; */
     background-color: black;
 
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
   }
   .description {
     margin: 1rem 0;
