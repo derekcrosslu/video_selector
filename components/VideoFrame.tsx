@@ -44,8 +44,6 @@ function onVideoEnd() {
           autoplay={true}
           controls={true}
           src={props.url}
-          width="auto"
-          height="auto"
           onReady={onPlayerReady}
           onPlay={onVideoPlay}
           onPause={onVideoPause}
